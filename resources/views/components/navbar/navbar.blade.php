@@ -115,22 +115,32 @@
             </a>
           </div>
         </li>
-        <li class="nav-item nav-profile dropdown">
-          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" id="profileDropdown">
-            <img src="{{ asset('admin/images/faces/face5.jpg') }}" alt="profile"/>
-            <span class="nav-profile-name">Louis Barnett</span>
-          </a>
-          <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
-            <a class="dropdown-item">
-              <i class="mdi mdi-settings text-primary"></i>
-              Settings
-            </a>
-            <a class="dropdown-item">
-              <i class="mdi mdi-logout text-primary"></i>
-              Logout
-            </a>
-          </div>
-        </li>
+        @if (Route::has('login'))
+            @auth
+              <li class="nav-item nav-profile dropdown">
+                <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" id="profileDropdown">
+                  <img src="{{ asset('admin/images/faces/face5.jpg') }}" alt="profile"/>
+                  <span class="nav-profile-name">{{ Auth::user()->name }}</span>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
+                    <a class="dropdown-item">
+                        <i class="mdi mdi-settings text-primary"></i>
+                        Settings
+                    </a>
+                    <a href="{{ route('logout') }}" class="dropdown-item" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                        <i class="mdi mdi-logout text-primary"></i>
+                        Logout
+                    </a>
+                    <form id="logout-form" method="POST" action="{{ route('logout') }}">
+                        @csrf
+                    </form>
+                </div>
+              </li>
+            @else
+                <li class="nav-item dropdown me-4" ><a class="underline" title="Register or Login" href="{{ route('login') }}">Login</a></li>
+                <li class="nav-item dropdown me-4" ><a class="underline" title="Register or Login" href="{{ route('register') }}">Register</a></li>
+            @endif
+        @endif
       </ul>
       <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
         <span class="mdi mdi-menu"></span>

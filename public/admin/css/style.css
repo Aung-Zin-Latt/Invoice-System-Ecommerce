@@ -10840,7 +10840,7 @@ textarea.form-control-lg {
   margin-bottom: 0.125rem;
 }
 
-.form-check .form-check-input {
+/* .form-check .form-check-input {
   float: left;
   margin-left: -1.5em;
 }
@@ -10904,7 +10904,7 @@ textarea.form-control-lg {
 
 .form-check-input[disabled] ~ .form-check-label, .form-check-input:disabled ~ .form-check-label {
   opacity: 0.5;
-}
+} */
 
 .form-switch {
   padding-left: 2.5em;
@@ -21400,7 +21400,7 @@ code {
   color: #ffffff;
 }
 
-.form-check .form-check-label input[type="radio"] + .input-helper:before {
+/* .form-check .form-check-label input[type="radio"] + .input-helper:before {
   position: absolute;
   content: "";
   top: 0;
@@ -21558,7 +21558,7 @@ code {
 .form-check-dark.form-check label input[type="checkbox"]:checked + .input-helper:before,
 .form-check-dark.form-check label input[type="radio"]:checked + .input-helper:before {
   background: #282f3a;
-}
+} */
 
 /* Dropdowns */
 .dropdown .dropdown-toggle:after {
