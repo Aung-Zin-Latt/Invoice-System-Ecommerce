@@ -15,17 +15,17 @@ class AllDeliveryComponent extends Component
     {
         $company = Company::find($id);
         $company->delete();
-        session()->flash('success', 'Successfully Deleted');
+        session()->flash('success', 'Delivery has been deleted successfully!');
     }
 
     public function render()
     {
         if($this->search)
         {
-            $allDeliveries = Company::where('state','LIKE', '%'. $this->search . '%')->paginate(5);
+            $allDeliveries = Company::where('state','LIKE', '%'. $this->search . '%')->orderBy('id', 'DESC')->paginate(5);
         }else {
 
-            $allDeliveries = Company::paginate(20);
+            $allDeliveries = Company::orderBy('id', 'DESC')->paginate(20);
         }
 
         return view('livewire.all-delivery-component', [

@@ -31,9 +31,9 @@
                                                 class="form-control input-md"
                                                 wire:model="name"
                                             />
-                                            @error('name')
+                                            {{-- @error('name')
                                             <p class="text-danger">{{ $message }}</p>
-                                            @enderror
+                                            @enderror --}}
                                     </div>
                                     <div class="mb-3">
                                         <label class="col-md-4 control-label"></label>

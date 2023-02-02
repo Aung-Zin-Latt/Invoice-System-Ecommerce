@@ -37,6 +37,21 @@
             </div>
         </li>
         <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="collapse" href="#delivery-company" aria-expanded="false"
+                aria-controls="ui-basic">
+                <i class="mdi mdi mdi-ambulance menu-icon"></i>
+                <span class="menu-title">Delivery Company</span>
+                <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="delivery-company">
+                <ul class="nav flex-column sub-menu">
+                    <li class="nav-item"> <a class="nav-link" href="{{ route('delivery-company') }}">View Delivery Company</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="{{ route('add-company') }}">Add Delivery Company</a>
+                    </li>
+                </ul>
+            </div>
+        </li>
+        <li class="nav-item">
             <a class="nav-link" data-bs-toggle="collapse" href="#profile-basic" aria-expanded="false"
                 aria-controls="ui-basic">
                 <i class="mdi mdi-account menu-icon"></i>

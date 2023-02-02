@@ -1,8 +1,11 @@
 <?php
 
+use App\Http\Livewire\AddDeliveryCompanyComponent;
 use App\Http\Livewire\AddDeliveryComponent;
 use App\Http\Livewire\AddOrderCheckoutComponent;
 use App\Http\Livewire\AllDeliveryComponent;
+use App\Http\Livewire\DeliveryCompanyComponent;
+use App\Http\Livewire\EditDeliveryCompanyComponent;
 use App\Http\Livewire\EditDeliveryComponent;
 use App\Http\Livewire\EditProfileComponent;
 use App\Http\Livewire\HomeComponent;
@@ -36,8 +39,13 @@ Route::get('/all-deliveries', AllDeliveryComponent::class)->name('all-deliveries
 Route::get('/add-delivery', AddDeliveryComponent::class)->name('add-delivery');
 Route::get('/all-deliveries/edit/{delivery_id}', EditDeliveryComponent::class)->name('edit-delivery');
 
+Route::get('/delivery-companies', DeliveryCompanyComponent::class)->name('delivery-company');
+Route::get('/delivery-companies/add', AddDeliveryCompanyComponent::class)->name('add-company');
+Route::get('/delivery-company/edit/{company_type_id}', EditDeliveryCompanyComponent::class)->name('edit-company');
+
 Route::get('/profile', ProfileComponent::class)->name('profile');
 Route::get('/profile/edit-profile', EditProfileComponent::class)->name('edit-profile');
+
 
 // Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->group(function () {
 //     Route::get('/dashboard', function () {

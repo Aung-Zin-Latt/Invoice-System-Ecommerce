@@ -18,7 +18,7 @@ class AddDeliveryComponent extends Component
     public function updated($fileds)
     {
         $this->validateOnly($fileds,[
-            'name' => 'required',
+            // 'name' => 'required',
             'state' => 'required',
             'basic_cost' => 'required',
             'waiting_time' => 'required'
@@ -37,7 +37,7 @@ class AddDeliveryComponent extends Component
     public function addNewDelivery()
     {
         $this->validate([
-            'name' => 'required',
+            // 'name' => 'required',
             'state' => 'required',
             'basic_cost' => 'required',
             'waiting_time' => 'required'
